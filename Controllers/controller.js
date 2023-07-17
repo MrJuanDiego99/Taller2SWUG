@@ -215,6 +215,18 @@ const deletePedidosProductos = async (req, res) => {
     res.status(400).json({ mensaje: "Registro No Eliminado" + error });
   }
 };
+ //--------------------------------------------------------------------------------
+
+const getProducto = async (req, res) =>{
+  const { idProducto } = req.params;
+  try {
+    const producto = await Producto.findByPk(idProducto);
+    res.status(200).json([producto]);
+  } catch (error) {
+    res.status(400).json({ mensaje: error });
+  }
+  
+}
 
 
 export {
@@ -236,5 +248,7 @@ export {
   getPedidosProductos,
   postPedidosProductos,
   putPedidosProductos,
-  deletePedidosProductos
+  deletePedidosProductos,
+
+  getProducto
 };

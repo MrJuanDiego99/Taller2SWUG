@@ -1,5 +1,7 @@
 import { Router } from 'express';
-import { getProductos, postProductos, putProductos, deleteProductos, getPedidos, postPedidos, getClientes, postClientes, putClientes, deleteClientes, putPedidos, deletePedidos, getPedidosProductos, postPedidosProductos, putPedidosProductos, deletePedidosProductos } from '../Controllers/controller.js';
+import { getProductos, postProductos, putProductos, deleteProductos, getPedidos, postPedidos, 
+  getClientes, postClientes, putClientes, deleteClientes, putPedidos, deletePedidos, getPedidosProductos, 
+  postPedidosProductos, putPedidosProductos, deletePedidosProductos, getProducto } from '../Controllers/controller.js';
 
 
 const router = Router();
@@ -32,6 +34,9 @@ router.get("/pedido_producto", getPedidosProductos);
 router.post("/pedido_producto",postPedidosProductos)
 router.put("/pedido_producto/:idPedPro", putPedidosProductos);
 router.delete("/pedido_producto/:idPedPro",deletePedidosProductos);
+
+//----------------------------------------------------------------------
+router.get("/productos/:idProducto", getProducto);
 
 export default router;
 
